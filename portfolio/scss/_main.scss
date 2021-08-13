@@ -5,35 +5,156 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.toggle {
-    background: #000 url(/portfolio/img/menu.svg) no-repeat center;
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    .active {
-        background: #000 url(/portfolio/img/close.svg);
-    }
-}
 
-// .toggle .close{
-//     background: #000 ;
+// // # menuToggle: pure js+css
+// .toggle {
+//     background: #000 url(/portfolio/img/menu.svg) no-repeat center;
 //     position: fixed;
 //     top: 30px;
 //     right: 30px;
 //     width: 50px;
 //     height: 50px;
 //     cursor: pointer;
+//     .active {
+//         background: #000 url(/portfolio/img/close.svg) no-repeat center;
+//     }
 // }
 
-.imgSidebar{
+// .banner{
+//     position: relative;
+//     width: 100%;
+//     min-height: 100vh;
+//     .imgSidebar{
+//         position: absolute; //psa
+//         top: 0;
+//         left: 0;
+//         width: 500px;
+//         height: 100%;
+//         // overflow:hidden;
+//         img{
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 100% ;
+//             //transform: translate(-100px, 0); // 結合imgSidebar-width將太空人置中
+//             object-fit:cover; // 填滿元素（原比例），多餘會剪掉。IE,edge不支援。
+//             // object-position: center center; 預設
+//         }
+//     }
+//     .content{
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         width: calc(100% - 500px);
+//         height: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         padding: 100px;
+//     }
+//     position: absolute;
+//     top: 40px;
+//     left: 100px;
+//     font-size: 1.2em;
+// }
 
-    img{
+// 用flex做
+.banner{
+    display: flex;
+    .imgSidebar{
+        min-width: 500px;
+        height: 100vh;
+        overflow: hidden;
+        img{
+            height: 100%; //mah
+            transform: translate(-115px, 0); // 將pic太空人置中
+        }
+    }
+    .content,
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px;
+        position: relative;
+        .portfolioLogo{
+            position: absolute;
+            top: 30px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            background: #000;
+            color: #fff;
+            display: inline-block;
+            padding: 0 6px;
+        }
+        h4{
+            font-size: 20px;
+            color: #333;
+            font-weight: 300;
+            span{
+                color:#00bcd4;
+                font-size: 28px;
+                font-weight: 700;
+            }
+        }
+        h2{
+            font-size: 40px;
+        }
+        p{
+            margin: 20px 0;
+            font-weight: 300;
 
+        }
+        .btn{
+            text-decoration: none;
+            display: inline-block;
+            color: #fff;
+            background: #00bcd4;
+            padding: 12px 28px;
+            letter-spacing: 2px;
+        }
+    }
+    .content .close{
+        background: #000;
+        
     }
 }
+.sidebar{
+    position: fixed;   // 用fixed跟absolute?
+    top: 0;
+    right: 0;
+    min-width: calc(100% - 500px);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    right: -100%;
+    ul{
+        li{
+            list-style: none;
+            a{
+                text-decoration: none;
+                display: inline-block;
+                color: #fff;
+                margin: 10px 0;
+                font-weight: 300;
+                letter-spacing: 2px;
+                text-transform: uppercase;  // 變成大寫
+                &:hover {
+                    color: #00bcd4;
+                }
+            }
+        }
+    }
+
+}
+.sidebarShow{
+    right: 0;
+}
+
+
 
 
 

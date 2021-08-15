@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/all.css">
     
 </head>
 <body>
@@ -15,33 +15,57 @@
     <!-- # menuToggle: Vue -->
     <div id="app">
         <div :class='[isToggle ? "toggle":"close"]' @click="isToggle = !isToggle"></div>
-    
 
         <section class="banner" id="home" >
             <div class="imgSidebar">
                 <img src="img/Astronaut.jpg" alt="...">
             </div>
             <div class="content">
+                <div class="portfolioLogo">
+                    <h5><bold>My_Portfolio</bold></h5>
+                </div>
                 <div>
-                    <h5 class="portfolioLogo"><bold>My_Portfolio</bold></h5>
                     <h4><span>Hello</span>, I'm</h4>
                     <h2>Hsu Miao Ki</h2>
                     <h4>I'm a Junior Front Web Developer</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae vel et consequuntur! Obcaecati quae maxime neque pariatur quam, minima repellendus ullam expedita provident sit natus eum error ut tempora culpa?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae vel et consequuntur! Obcaecati quae maxime neque pariatur quam</p>
                     <a href="#" class="btn">About Me</a>
                 </div>
+                <ul class="contactLogo">
+                    <li><a href="mailto:kikimiao1995@gmail.com"><i class="bi bi-envelope-fill"></i></a></li>
+                </ul>
             </div>
         </section>
         <div class="sidebar" :class='[isToggle ? "":"sidebarShow"]'>
             <ul class="menuLi">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="#home" @click="isToggle = !isToggle">Home</a></li>
+                <li><a href="#aboutme" @click="isToggle = !isToggle">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
+        <section id="aboutme" class="aboutme">
+            <div class="title">
+                <h2>About Me</h2>
+                <p>【人個特質】</p>
+            </div>
+            <div class="content">
+                <div class="textbox">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi suscipit repudiandae doloribus, amet sit consequatur rerum inventore nam maxime distinctio odio accusantium atque odit voluptatum ullam modi dolorem eos eveniet.
+                </div>
+                <div class="myphoto">
+                    <img src="https://picsum.photos/400/400" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="skills">
+            <div class="title">Skills</div>
+            
+        </section>
     </div>
+
+
     <script src="https://unpkg.com/vue@next"></script>
     <script src="all.js"></script>
     <script src="vueframe.js"></script>

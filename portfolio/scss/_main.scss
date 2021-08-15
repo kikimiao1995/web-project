@@ -4,8 +4,19 @@
     box-sizing: border-box; // shorthand:bx?
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    list-style-type: none;
 }
-h2 {font-size: 40px;}
+h2 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+h4{
+    font-size: 20px;
+    color: #333;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
 
 
 // // # menuToggle: pure js+css
@@ -99,13 +110,9 @@ h2 {font-size: 40px;}
                 font-weight: 700;
             }
         }
-        h2{
-            font-size: 40px;
-        }
         p{
             margin: 20px 0;
             font-weight: 300;
-
         }
         .btn{
             text-decoration: none;
@@ -115,12 +122,24 @@ h2 {font-size: 40px;}
             padding: 12px 28px;
             letter-spacing: 2px;
         }
-    }
-    .content .close{
-        background: #000;
-        
+        // 下面的contact log
+        .contactLogo{
+            display: flex;
+            li{
+                padding-right: 15px;
+                a{
+                    display: inline-block;
+                    padding: 10px 14px;
+                    border: 1px dashed #333;
+                    border-radius: 50%;
+                    color:#333;
+                }
+            }
+        }
     }
 }
+
+
 .sidebar{
     position: fixed;   // 用fixed跟absolute?
     top: 0;
@@ -132,9 +151,10 @@ h2 {font-size: 40px;}
     align-items: center;
     background: #000;
     right: -100%;
+    transition: 0.6s;
     ul{
         li{
-            list-style: none;
+            // list-style: none;
             a{
                 text-decoration: none;
                 display: inline-block;
@@ -166,23 +186,55 @@ h2 {font-size: 40px;}
         margin-bottom: 20px;
         h2{
             display: inline-block;
-            font-weight: 800;
-            letter-spacing: 2px;
         }
         p{
             padding-top: 20px;
+            color:rgb(236, 233, 184);
         }
     }
     .content{
-        display: flex;
+
     }
 }
 // ================= skills ==================
 .skills{
     min-height: 100vh;
     padding: 80px;
+    background: rgb(230, 247, 245);
+    text-align: center;
+    .title{
+        margin-bottom: 20px;
+    }
+    
+
 }
 
+.technical-skill{
+    background: #fff;
+    box-shadow: 0 0 10px rgb(102, 122, 124);
+    padding: 4px;
+    max-width: 40%;
+    .subtitle{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .technical-bars {
+        .bar{
+            margin: 20px 0 ;
+            .info{
+                span{
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+            }
+            .progress-line{
+                height: 10px;
+                width: 100%;
+                background: #f0f0f0;
+                
+            }
+        }
 
-
+    }
+}
 

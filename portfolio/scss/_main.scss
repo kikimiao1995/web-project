@@ -152,6 +152,7 @@ h4{
     background: #000;
     right: -100%;
     transition: 0.6s;
+    z-index: 99;
     ul{
         li{
             // list-style: none;
@@ -192,49 +193,110 @@ h4{
             color:rgb(236, 233, 184);
         }
     }
-    .content{
-
-    }
 }
 // ================= skills ==================
 .skills{
     min-height: 100vh;
-    padding: 80px;
+    padding: 50px;
     background: rgb(230, 247, 245);
-    text-align: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     .title{
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        text-align: center;
     }
-    
-
 }
-
 .technical-skill{
     background: #fff;
     box-shadow: 0 0 10px rgb(102, 122, 124);
     padding: 4px;
-    max-width: 40%;
+    max-width: 80%;
     .subtitle{
-        text-align: center;
         margin-top: 20px;
+        text-align: center;
     }
-    .technical-bars {
-        .bar{
-            margin: 20px 0 ;
-            .info{
-                span{
-                    font-size: 17px;
-                    font-weight: 500;
-                }
+}
+// ---animated skillbar only by css & html----
+.bar {
+    margin: 20px 10px;
+    .info {
+        margin-bottom: 20px;
+        span {
+            font-size: 17px;
+            font-weight: 500;
+            opacity: 0;
+            animation:showText 0.5s 1s linear forwards;
+        }
+    }
+    .progress-line {
+        position: relative;
+        height: 15px;
+        width: 100%;
+        background: #f0f0f0;
+        border-radius: 10px;
+        transform: scaleX(0); //?????
+        transform-origin: left;
+        box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05), //bxsh
+                        0px 1px rgba(255, 255, 255, 0.8);
+        animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;  //?????
+        span {
+            height: 100%;
+            width: var(--bar-width);
+            background: #00bcd4;
+            position: absolute;
+            border-radius: 10px;
+            transform: scaleX(0); //?????
+            transform-origin: left;
+            animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+            &::before {
+                position: absolute;
+                content: '';
+                right: 0;
+                top: -10px;
+                height: 0;
+                width: 0;
+                border: 7px solid transparent;
+                border-bottom-width: 0px;
+                border-right-width: 0px;
+                border-top-color: #000;
+                opacity: 0;
+                animation:showText2 0.5s 1.5s linear forwards;
             }
-            .progress-line{
-                height: 10px;
-                width: 100%;
-                background: #f0f0f0;
-                
+            &::after {
+                position: absolute;
+                content: var(--bar-content);
+                right: 0;
+                top: -28px;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 500;
+                background: #000;
+                padding: 1px 8px;
+                border-radius: 3px;
+                opacity: 0;
+                animation:showText2 0.5s 1.5s linear forwards;
             }
         }
-
+    }
+}
+// connect to .progress-line
+@keyframes animate{
+    100%{
+        transform:scaleX(1);
+    }
+}
+// .info span
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+// span::before & after
+@keyframes showText2 {
+    100% {
+        opacity:1;
     }
 }
 
